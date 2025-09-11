@@ -3,6 +3,7 @@ import 'package:logarte/logarte.dart';
 import 'package:logarte/src/console/logarte_entry_item.dart';
 import 'package:logarte/src/console/logarte_fab_state.dart';
 import 'package:logarte/src/console/logarte_theme_wrapper.dart';
+import 'package:logarte/src/extensions/list_extensions.dart';
 
 class LogarteDashboardScreen extends StatefulWidget {
   final Logarte instance;
@@ -207,7 +208,7 @@ class _ListState<T extends LogarteEntry> extends State<_List<T>> {
                 itemCount: filtered.length,
                 itemBuilder: (context, index) {
                   return LogarteEntryItem(
-                    filtered[index],
+                    filtered.reversedAt(index),
                     instance: widget.instance,
                   );
                 },
